@@ -3,35 +3,54 @@
 <head>
 <title>Kartik ❤️ Ruchi</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <style>
 body{
-margin:0;
-height:100vh;
-display:flex;
-align-items:center;
-justify-content:center;
-background:linear-gradient(135deg,#ff758c,#ff7eb3);
-color:white;
-font-family:Arial;
-text-align:center;
+  margin:0;
+  min-height:100vh;
+  background:linear-gradient(135deg,#ff758c,#ff7eb3);
+  color:white;
+  font-family:Arial;
+  text-align:center;
 }
-button{
-padding:12px 25px;
-border:none;
-border-radius:25px;
-font-size:16px;
-background:white;
-color:#ff4d6d;
-margin-top:20px;
+
+.container{
+  padding:20px;
+}
+
+.gallery{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  margin-top:20px;
+}
+
+.gallery img{
+  width:160px;
+  height:220px;
+  object-fit:cover;
+  border-radius:15px;
+  margin:10px;
+  box-shadow:0 10px 20px rgba(0,0,0,0.3);
 }
 </style>
 </head>
+
 <body>
-<div>
-<h1>Hi Ruchi ❤️</h1>
-<p>This website is made only for you</p>
-<p>Happy New Year 💖</p>
-<p>— Kartik</p>
+<div class="container">
+  <h1>Hi Ruchi ❤️</h1>
+  <p>This website is made only for you</p>
+  <p>Happy New Year 💖</p>
+  <p>— Kartik</p>
+
+  <div class="gallery">
+    <img src="photo1.jpg">
+    <img src="photo2.jpg">
+    <img src="photo3.jpg">
+    <img src="photo4.jpg">
+    <img src="photo5.jpg">
+    <img src="photo6.jpg">
+  </div>
 </div>
 </body>
 </html>
