@@ -7,15 +7,45 @@
 <style>
 body{
   margin:0;
-  min-height:100vh;
+  font-family:Arial;
   background:linear-gradient(135deg,#ff758c,#ff7eb3);
   color:white;
-  font-family:Arial;
   text-align:center;
 }
 
-.container{
-  padding:20px;
+.page{
+  display:none;
+  min-height:100vh;
+  padding:30px;
+}
+
+.page.active{
+  display:block;
+}
+
+button{
+  padding:12px 25px;
+  border:none;
+  border-radius:25px;
+  font-size:16px;
+  background:white;
+  color:#ff4d6d;
+  margin-top:25px;
+}
+
+.loader{
+  margin:30px auto;
+  width:50px;
+  height:50px;
+  border:5px solid rgba(255,255,255,0.3);
+  border-top:5px solid white;
+  border-radius:50%;
+  animation:spin 1s linear infinite;
+}
+
+@keyframes spin{
+  0%{transform:rotate(0deg);}
+  100%{transform:rotate(360deg);}
 }
 
 .gallery{
@@ -37,11 +67,26 @@ body{
 </head>
 
 <body>
-<div class="container">
-  <h1>Hi Ruchi ❤️</h1>
-  <p>This website is made only for you</p>
-  <p>Happy New Year 💖</p>
+
+<!-- PAGE 1 -->
+<div class="page active" id="page1">
+  <h1>Hello Ruchi ❤️</h1>
+  <p>I just want to wish you a very Happy New Year 💖</p>
+  <p>You are the most beautiful part of my life.</p>
   <p>— Kartik</p>
+  <button onclick="goToPage(2)">Next</button>
+</div>
+
+<!-- PAGE 2 -->
+<div class="page" id="page2">
+  <h2>Something special is waiting for you… ✨</h2>
+  <div class="loader"></div>
+  <p>Please wait 💕</p>
+</div>
+
+<!-- PAGE 3 -->
+<div class="page" id="page3">
+  <h2>Kartik ❤️ Ruchi</h2>
 
   <div class="gallery">
     <img src="photo1.jpg">
@@ -51,6 +96,27 @@ body{
     <img src="photo5.jpg">
     <img src="photo6.jpg">
   </div>
+
+  <p>Every photo with you is my favorite memory 💕</p>
 </div>
+
+<audio id="song" src="tereliye.mp3" loop></audio>
+
+<script>
+function goToPage(n){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.getElementById('page'+n).classList.add('active');
+
+  if(n===2){
+    setTimeout(()=>{
+      document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+      document.getElementById('page3').classList.add('active');
+      document.getElementById('song').play();
+    },3000);
+  }
+}
+</script>
+
 </body>
 </html>
+
